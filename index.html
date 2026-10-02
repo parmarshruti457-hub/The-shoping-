@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SHOPING — Shop More • Save More</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <a class="logo" href="#home"><span>🛍</span> THE SHOPING</a>
+    <div class="search"><input id="searchInput" placeholder="Search products, brands and more..."><button onclick="searchProducts()">⌕</button></div>
+    <nav><a href="#home">Home</a><a href="#shop">Shop All</a><a href="#orders">My Orders</a><a href="#cart">🛒 <span id="cartCount">0</span></a></nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div><p class="eyebrow">🪔 THE SHOPING</p><h1>DIWALI SPECIAL</h1><h2>UP TO <b>80% OFF</b></h2><p>Celebrate More. Shop More. Save More.</p><button onclick="location.hash='shop'">SHOP NOW →</button></div>
+</section>
+
+<section class="trust">
+  <div>✦ <b>Premium Quality</b><small>Best Products</small></div>
+  <div>🔒 <b>Secure Payment</b><small>100% Online</small></div>
+  <div>🚚 <b>Fast Delivery</b><small>Across India</small></div>
+  <div>↩ <b>Easy Returns</b><small>Hassle Free</small></div>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>Shop by Category</h2></div>
+  <div id="categories" class="categories"></div>
+</section>
+
+<section id="shop" class="section">
+  <div class="section-head"><h2>🔥 Featured Products</h2><select id="sort" onchange="renderProducts()"><option value="featured">Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select></div>
+  <div id="products" class="products"></div>
+</section>
+
+<section id="cart" class="section">
+  <div class="section-head"><h2>🛒 Your Cart</h2></div>
+  <div id="cartBox"></div>
+</section>
+
+<section id="checkout" class="section">
+  <div class="section-head"><h2>💳 Secure Checkout</h2></div>
+  <div class="checkout">
+    <form id="checkoutForm">
+      <input required id="name" placeholder="Full name">
+      <input required id="phone" placeholder="Mobile number">
+      <input required id="address" placeholder="Delivery address">
+      <input required id="city" placeholder="City">
+      <input required id="pincode" placeholder="PIN code">
+      <div class="payment-note">🔒 Online payment only. COD is not available.</div>
+      <button type="submit">CONTINUE TO PAYMENT →</button>
+    </form>
+    <div id="checkoutSummary"></div>
+  </div>
+</section>
+
+<section id="success" class="section success">
+  <div class="success-card"><div class="big">✓</div><h2>Order Confirmed</h2><p id="successText"></p><button onclick="location.hash='home'">CONTINUE SHOPPING</button></div>
+</section>
+
+<section id="orders" class="section">
+  <div class="section-head"><h2>📦 My Orders</h2></div>
+  <div id="ordersBox"></div>
+</section>
+</main>
+
+<footer><b>THE SHOPING</b><span>SHOP MORE • SAVE MORE</span><span>100% ONLINE PAYMENT ONLY • COD NOT AVAILABLE</span></footer>
+<script src="app.js"></script>
+</body>
+</html>
